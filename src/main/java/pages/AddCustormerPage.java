@@ -1,6 +1,5 @@
 package pages;
 
-
 import static org.junit.Assert.assertEquals;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +28,9 @@ public class AddCustormerPage extends ConfigUrl{
 	private String xpathValueEmployeer = "//*[@id=\"field_salesRepEmployeeNumber_chosen\"]/div/ul/li";
 	private String idCredit = "field-creditLimit";
 	private String buttonSave = "form-button-save";
-	private static String msg = "Your data has been successfully stored into the database. Edit Customer or Go back to list";
+	private String idSucess = "report-success";
+	private String xpathTextSucess = "//div[2]/div/div/div/div[2]/form/div[14]/div[2]/p";
+	private String msg = "Your data has been successfully stored into the database. Edit Customer or Go back to list";
 	
 	
 	
@@ -85,8 +86,8 @@ public class AddCustormerPage extends ConfigUrl{
 
 	public void valSucess() {
 		WebDriverWait waitSucess = new WebDriverWait(driver, 5);
-		waitSucess.until(ExpectedConditions.visibilityOfElementLocated(By.id("report-success")));
-		String sucess = driver.findElement(By.xpath("//div[2]/div/div/div/div[2]/form/div[14]/div[2]/p")).getText();
+		waitSucess.until(ExpectedConditions.visibilityOfElementLocated(By.id(idSucess)));
+		String sucess = driver.findElement(By.xpath(xpathTextSucess)).getText();
 		assertEquals(msg, sucess);
 	}
 	

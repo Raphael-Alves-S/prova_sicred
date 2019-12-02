@@ -4,7 +4,6 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-
 import core.ConfigUrl;
 import pages.AddCustormerPage;
 
@@ -39,4 +38,5 @@ public void c_preencherFormulario() {
 public void d_validarMensagemSucesso(){
 	addCustomer.valSucess();
 }
+
 }

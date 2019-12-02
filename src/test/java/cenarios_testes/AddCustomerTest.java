@@ -1,22 +1,24 @@
 package cenarios_testes;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import core.ConfigUrl;
-import pages.AddCustormerPage;
+import pages.AddCustomerPage;
+
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AddCustomerTest {
 	private static ConfigUrl config=null;
-	private static AddCustormerPage addCustomer=null;
+	private static AddCustomerPage addCustomer=null;
 	
 	
 @BeforeClass
 public static void verificacaoParam() throws Exception {
 	config = new ConfigUrl();
-    addCustomer = new AddCustormerPage(config.getDriver());
+    addCustomer = new AddCustomerPage(config.getDriver());
 }
 	
 @Test
@@ -39,4 +41,8 @@ public void d_validarMensagemSucesso(){
 	addCustomer.valSucess();
 }
 
+@AfterClass
+public static void sairNavegador() {
+	addCustomer.exitBrowser();
+}
 }

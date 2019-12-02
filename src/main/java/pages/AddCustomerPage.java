@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import core.ConfigUrl;
 
-public class AddCustormerPage extends ConfigUrl{
+public class AddCustomerPage extends ConfigUrl{
 	private String idSelect = "switch-version-select";
 	private String visibleText = "Bootstrap V4 Theme";
 	private String customerButtonSelector = "#gcrud-search-form > div.header-tools > div.floatL.t5 > a";
@@ -35,7 +35,7 @@ public class AddCustormerPage extends ConfigUrl{
 	
 	
 	
-	public AddCustormerPage(WebDriver driver) {
+	public AddCustomerPage(WebDriver driver) {
 		super(driver);
 	}
 	
@@ -89,6 +89,10 @@ public class AddCustormerPage extends ConfigUrl{
 		waitSucess.until(ExpectedConditions.visibilityOfElementLocated(By.id(idSucess)));
 		String sucess = driver.findElement(By.xpath(xpathTextSucess)).getText();
 		assertEquals(msg, sucess);
+	}
+	
+	public void exitBrowser() {
+		driver.close();
 	}
 	
 }

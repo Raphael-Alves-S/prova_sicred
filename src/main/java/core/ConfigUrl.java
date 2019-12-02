@@ -21,5 +21,5 @@ public class ConfigUrl {
 		public WebDriver getDriver() {
 			return driver;
 		}
-
+		
 }

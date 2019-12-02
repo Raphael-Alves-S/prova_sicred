@@ -72,7 +72,5 @@ public class DeleteCustomerPage extends ConfigUrl{
 		assertEquals(msgAlert, sucess);		
 		
 	}
-	public void valSucess() {
-		
-	}
+	
 }

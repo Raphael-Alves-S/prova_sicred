@@ -29,5 +29,7 @@ public class DeleteCustomerTest {
 	public void visualizarModal() {
 		delCustomer.modalAlert();
 	}
-	
+	public void deletarUsuario() {
+		delCustomer.deleteCustomer();
+	}
 }
